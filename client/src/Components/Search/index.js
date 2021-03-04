@@ -11,21 +11,17 @@ function Search() {
 
   function handleInputChange(event) {
     const { value } = event.target;
-    console.log(value);
     setSearch(value);
   }
 
   function handleFormSubmit(event) {
     event.preventDefault();
-    console.log("Search term:", search);
     API.googleBooks(search)
       .then((res) => setBooks(res.data))
       .catch((err) => console.log(err));
-    console.log(books);
   }
 
   function saveBook(book) {
-    console.log("Inside of save function")
     API.saveBook({
       title: book.title,
       authors: book.authors,

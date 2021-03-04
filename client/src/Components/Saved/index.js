@@ -19,7 +19,6 @@ function Saved() {
 
     function deleteBook(book) {
         const bookId = book._id;
-        // console.log(bookId);
         API.deleteBook(bookId)
             .then(() => loadBooks())
             .catch((err) => console.log(err));
